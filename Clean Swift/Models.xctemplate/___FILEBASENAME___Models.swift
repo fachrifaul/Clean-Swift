@@ -24,6 +24,7 @@ enum ___VARIABLE_sceneName___ {
     struct Response {
 
     }
+    
     struct ViewModel {
 
     }

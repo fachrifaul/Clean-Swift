@@ -47,13 +47,37 @@ class ___VARIABLE_sceneName___ViewControllerTests: XCTestCase {
   
   // MARK: Test doubles
   
+  class ___VARIABLE_sceneName___BusinessLogicSpy: ___VARIABLE_sceneName___BusinessLogic {
+    var doSomethingCalled = false
+    
+    func doSomething(request: ___VARIABLE_sceneName___.Something.Request) {
+      doSomethingCalled = true
+    }
+  }
+  
   // MARK: Tests
   
-  func testSomething() {
+  func testShouldDoSomethingWhenViewIsLoaded() {
     // Given
+    let spy = ___VARIABLE_sceneName___BusinessLogicSpy()
+    sut.interactor = spy
     
     // When
+    loadView()
     
     // Then
+    XCTAssertTrue(spy.doSomethingCalled, "viewDidLoad() should ask the interactor to do something")
+  }
+  
+  func testDisplaySomething() {
+    // Given
+    let viewModel = ___VARIABLE_sceneName___.Something.ViewModel()
+    
+    // When
+    loadView()
+    sut.displaySomething(viewModel: viewModel)
+    
+    // Then
+    //XCTAssertEqual(sut.nameTextField.text, "", "displaySomething(viewModel:) should update the name text field")
   }
 }

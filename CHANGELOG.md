@@ -1,6 +1,16 @@
 # Change Log
 
 All notable changes to this project will be documented in this file.
+## 3.0.2
+
+- Fixed @testable import for project names containing spaces
+
+## 3.0.1
+
+- Added example unit tests for the sample use case in:
+	- View controller
+	- Interactor
+	- Presenter
 
 ## 3.0.0
 
